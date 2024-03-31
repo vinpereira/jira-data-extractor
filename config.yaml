@@ -1,0 +1,40 @@
+Connection:
+    Domain: PUT YOUR DOMAIN HERE
+    Username: PUT YOUR USERNAME HERE
+    Password: PUT YOUR PASSWORKD (OR APIKEY) HERE
+
+# query example: 'project = XYZ and issuetype in (Bug, Story, Task)'
+Criteria:
+    Query: PUT YOUR QUERY HERE (WITH QUOTES)
+
+# workflow could be 1:1, like Backlog or 1:many, like Done
+Workflow:
+    To Do:
+        - (Created)
+        - To Do
+    Backlog: Backlog
+    Dev Ready: Dev Ready
+    Dev in Progress: Dev In Progress
+    In Review: In Review
+    QA Ready: QA Ready
+    QA in Progress: QA In Progress
+    Done:
+        - Done
+        - Resolved
+        - Cancelled
+
+# attributes needs to use Jira name internal name.
+Attributes:
+    Issue Type: issuetype
+    Priority: priority
+    Resolution: resolution
+    Team: customfield_11000
+    Parent: parent
+    Due Date: duedate
+    Story Points: customfield_10005
+
+# these flags will mask or not both issue name (summary) and link
+# new flags could be added here
+Feature Flags:
+    MaskName: False
+    MaskLink: True
